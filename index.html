@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Konwerter Walut</title>
+  </head>
+  <body>
+    <main class="main-container">
+      <h1>Konwerter Walut</h1>
+      <form class="converter-form" action="#">
+        <div class="input-container">
+          <label for="amount">Kwota:</label>
+          <input
+            type="number"
+            id="amount"
+            name="amount"
+            step="0.01"
+            min="0.01"
+          />
+        </div>
+
+        <div class="input-container">
+          <label for="owned">Posiadana waluta:</label>
+          <select id="owned">
+            <option value="PLN">PLN</option>
+          </select>
+        </div>
+        <div class="input-container">
+          <label for="wanted">Oczekiwana waluta:</label>
+          <select id="wanted">
+            <option value="PLN">PLN</option>
+          </select>
+        </div>
+
+        <input class="submit-button" type="submit" value="Konwertuj" />
+      </form>
+    </main>
+    <script src="script.js">
+      
+    </script>
+  </body>
+</html>
