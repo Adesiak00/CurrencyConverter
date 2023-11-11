@@ -65,6 +65,21 @@ function GetCurrencies() {
       console.error("Waluty nie działają :c", error);
     });
 }
+function GetCurrencies2() {
+  fetch("https://api.nbp.pl/api/exchangerates/tables/b/")
+    .then((response) => response.json())
+    .then((data) => {
+      const currencies = data[0].rates;
+      currencies.forEach((currency) => {
+        CurrenciesArray[currency.code] = currency.mid;
+        insertSelectOptions(ownedSelect, currency.code);
+        insertSelectOptions(wantedSelect, currency.code);
+      });
+    })
+    .catch((error) => {
+      console.error("Waluty nie działają :c", error);
+    });
+}
 
 function insertSelectOptions(selectElement, currencyCode) {
   const selectOption = document.createElement("option");
@@ -75,6 +90,7 @@ function insertSelectOptions(selectElement, currencyCode) {
 
 console.log(CurrenciesArray);
 GetCurrencies();
+GetCurrencies2();
 
 setInterval(updateDateTime, 1000);
 updateDateTime();
